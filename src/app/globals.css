@@ -1,26 +1,39 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  background-color: #A79E9C;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@font-face {
+  font-family: 'Montserrat';
+  src: url("../../public/fonts/Montserrat.ttf") format('truetype');
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: 'Meditative';
+  src: url("../../public/fonts/Meditative.ttf") format('truetype');
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@font-face {
+  font-family: 'Kryshna';
+  src: url("../../public/fonts/Kryshna.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Sallim';
+  src: url("../../public/fonts/Sallim.ttf") format('truetype');
+}
+
+@font-face {
+  font-family: 'Jupiteroid';
+  src: url("../../public/fonts/Jupiteroid-Light.ttf") format('truetype');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Jupiteroid';
+  src: url("../../public/fonts/Jupiteroid-Regular.ttf") format('truetype');
+  font-weight: 400;
 }
