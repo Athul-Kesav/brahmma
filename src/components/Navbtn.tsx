@@ -14,9 +14,10 @@ export default function Navbtn({ text, cta }: NavBtnProps) {
         className="text-cream group cursor-pointer inline-flex font-montserrat text-lg lg:text-xl hover:brightness-150 active:brightness-90 transition-all duration-200"
         onClick={cta}
       >
+        <span className="pointer-events-none select-none">
         {text}
+        </span>
         <span>
-          
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -27,7 +28,7 @@ export default function Navbtn({ text, cta }: NavBtnProps) {
             strokeWidth="1"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="lucide lucide-arrow-down stroke-transparent group-hover:stroke-warmGray transition-all duration-500 group-hover:-rotate-90"
+            className="lucide lucide-arrow-down stroke-transparent md:group-hover:stroke-warmGray transition-all duration-500 md:group-hover:-rotate-90"
           >
             <path d="M12 5v14" />
             <path d="m19 12-7 7-7-7" />

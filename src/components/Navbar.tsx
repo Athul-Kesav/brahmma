@@ -5,29 +5,59 @@ import { motion, AnimatePresence } from "framer-motion";
 import Navbtn from "./Navbtn";
 
 export default function Navbar() {
-  const [showSubNav, setShowSubNav] = useState(false);
+  const services = [
+    "BIRTHDAYS",
+    "WEDDINGS",
+    "PARTIES",
+    "ENGAGEMENTS",
+    "RECEPTION",
+    "BABY",
+    "SHOWER",
+    "SHOP OPENINGS",
+    "COLLEGE FESTS",
+    "CORPORATE EVENTS",
+  ];
+  const gallery = ["2020", "2021", "2022", "2023", "2024", "2025"];
+  const [showSubNavService, setShowSubNavService] = useState(false);
+  const [showSubNavGallery, setShowSubNavGallery] = useState(false);
 
   return (
     <div className="h-16 lg:h-36 text-cream w-full inline-flex flex-col items-center justify-between p-0 lg:p-4 sticky sm:fixed top-0 z-50">
-      <div className="m-0 lg:m-4 lg:max-h-[5rem] flex lg:bg-darkBlue/80 bg-darkBlue justify-between items-center w-full h-full relative px-8 lg:rounded-xl lg:backdrop-blur-[6px]">
+      <div className="m-0 lg:m-5 lg:max-h-[5rem] flex lg:bg-darkBlue/80 bg-darkBlue justify-between items-center w-full h-full relative px-8 lg:rounded-xl lg:backdrop-blur-[6px]">
         <div
           className="font-meditative text-4xl lg:text-5xl hover:brightness-150 transition-all duration-200 cursor-pointer active:brightness-90"
-          onMouseEnter={() => setShowSubNav(false)}
+          onMouseEnter={() => setShowSubNavService(false)}
         >
           Brahmma
         </div>
         <div className="inline-flex lg:space-x-12 space-x-5 items-center">
           <div className="lg:space-x-12 space-x-5 hidden md:inline-flex items-center">
-            <div className="relative" onMouseEnter={() => {
-              setShowSubNav(true);
-            }}>
+            <div
+              className="relative"
+              onMouseEnter={() => {
+                setShowSubNavService(true);
+                setShowSubNavGallery(false);
+              }}
+            >
               <Navbtn text="Services" cta={() => console.log("services")} />
             </div>
-            <div className="relative" onMouseEnter={() => setShowSubNav(false)}>
+            <div
+              className="relative"
+              onMouseEnter={() => {
+                setShowSubNavService(false);
+                setShowSubNavGallery(true);
+              }}
+            >
               <Navbtn text="Gallery" cta={() => console.log("Gallery")} />
             </div>
 
-            <div className="relative" onMouseEnter={() => setShowSubNav(false)}>
+            <div
+              className="relative"
+              onMouseEnter={() => {
+                setShowSubNavService(false);
+                setShowSubNavGallery(false);
+              }}
+            >
               <Navbtn text="Contact" cta={() => console.log("Contact")} />
             </div>
           </div>
@@ -42,7 +72,11 @@ export default function Navbar() {
               strokeWidth="1"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="lucide lucide-shopping-cart active:brightness-90 object-center cursor-pointer hover:brightness-150 transition-all duration-200"
+              className="lucide lucide-shopping-cart active:brightness-90 hover:scale-[103%] active:scale-95 object-center cursor-pointer hover:brightness-150 transition-all duration-200"
+              onMouseEnter={() => {
+                setShowSubNavService(false);
+                setShowSubNavGallery(false);
+              }}
             >
               <circle cx="8" cy="21" r="1" />
               <circle cx="19" cy="21" r="1" />
@@ -80,21 +114,58 @@ export default function Navbar() {
       </div>
       {/* Subnav */}
       <AnimatePresence>
-        {showSubNav && (
+        {showSubNavService && (
           <motion.div
-            className="w-full absolute top-16 lg:top-[6.7rem] font-montserrat lowercase text-xl items-center justify-center bg-darkBlue/75 backdrop-blur-xl h-full lg:max-h-[5rem] flex"
+            className="w-full absolute top-16 lg:top-[6.7rem] font-montserrat lowercase text-xl items-center flex flex-wrap  bg-darkBlue/50 border-t border-b border-cream backdrop-blur-xl h-fit lg:max-h-fit "
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.3 }}
             onMouseLeave={() => {
               setTimeout(() => {
-                setShowSubNav(false);
+                setShowSubNavService(false);
               }, 500);
             }}
+            onMouseEnter={()=> {
+              setShowSubNavService(true)
+            }}
           >
-            BIRTHDAYS | WEDDINGS | PARTIES | ENGAGEMENTS | RECEPTION | BABY
-            SHOWER | SHOP OPENINGS | COLLEGE FESTS | CORPORATE EVENTS
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className="px-4 py-2 cursor-pointer transition-all duration-200 rounded-lg border-transparent text-cream active:scale-95 hover:border-cream mx-3 my-2 border-b-4 border-l border-r border-t"
+              >
+                {service.toLowerCase()}
+              </div>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+      <AnimatePresence>
+        {showSubNavGallery && (
+          <motion.div
+            className="w-full absolute top-16 lg:top-[6.7rem] font-montserrat lowercase text-xl justify-center items-center flex flex-wrap  bg-darkBlue/50 border-t border-b border-cream backdrop-blur-xl h-fit lg:max-h-fit "
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.3 }}
+            onMouseLeave={() => {
+              setTimeout(() => {
+                setShowSubNavGallery(false);
+              }, 500);
+            }}
+            onMouseEnter={()=> {
+              setShowSubNavGallery(true)
+            }}
+          >
+            {gallery.map((year, index) => (
+              <div
+                key={index}
+                className="px-4 py-2 cursor-pointer transition-all duration-200 rounded-lg  flex border-transparent text-cream active:scale-95 hover:border-cream m-3 border-b-4 border-l border-r border-t"
+              >
+                {year.toLowerCase()}
+              </div>
+            ))}
           </motion.div>
         )}
       </AnimatePresence>
