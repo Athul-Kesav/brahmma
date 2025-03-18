@@ -4,12 +4,15 @@ import Image from "next/image";
 import hero1 from "@/images/hero1.jpg"
 
 export default function Home() {
+
+
   return (
     <>
       <Navbar />
       <div className="w-screen h-fit relative top-0 flex items-center justify-start flex-col z-0 bg-cream">
-        <div className="h-screen sm:p-0 grid grid-rows-6 w-full gap-0 sm:gap-1 relative">
-          <div className="row-span-2 m-4 sm:m-0 sm:row-span-5 flex h-full w-auto relative rounded-xl md:rounded-t-none md:rounded-b-3xl lg:rounded-b-[4rem] overflow-hidden">
+        {/*Home Page*/}
+        <div className="h-[50vh] sm:h-screen sm:p-0 grid grid-rows-6 w-full gap-0 sm:gap-1 relative bg-black">
+          <div className="row-span-4 m-4 sm:m-0 sm:row-span-5 flex h-full w-auto relative rounded-xl md:rounded-t-none md:rounded-b-3xl lg:rounded-b-[4rem] overflow-hidden">
             <Image src={hero1} layout="fill" alt="HeroImg" objectFit="cover" objectPosition="bottom" className="object-contain"/>
           </div>
           <div className="row-span-1 h-[7rem] translate-y-5 sm:translate-y-0 sm:h-full  relative w-full flex-col items-center flex justify-center"> 
@@ -38,8 +41,28 @@ export default function Home() {
             
           </div>
         </div>
-        
+        <div className="w-screen h-[50vh] sm:h-screen relative top-0 flex items-center justify-start flex-col z-0 bg-cream">
+          <div className="w-full h-full grid grid-cols-3  relative">
+            <div className="bg-red-500 col-span-2 flex sm:items-center  h-full w-full relative">
+              <p className="font-kryshna text-2xl sm:text-4xl lg:text-8xl text-left text-darkBlue font-bold p-4 sm:p-8 tracking-wide leading-tighter">
+              Bringing Your Special
+              <br/>
+              Moments to Life with
+              <br/>
+              Stunning Decor & Flawless
+              <br/>
+              Event Management
+              </p>
+            </div>
+            <div className="bg-black col-span-1 flex h-full w-full relative">
+              <Image src="" alt="" className=""/>
+              <Image src="" alt="" className=""/>
+              <Image src="" alt="" className=""/>
+            </div>
+          </div>
+        </div>
       </div>
+      
     </>
   );
 }

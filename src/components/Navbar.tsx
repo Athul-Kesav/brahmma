@@ -4,7 +4,12 @@ import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Navbtn from "./Navbtn";
 
+import { useRouter } from "next/navigation";
+
 export default function Navbar() {
+
+  const router = useRouter();
+
   const services = [
     "BIRTHDAYS",
     "WEDDINGS",
@@ -27,6 +32,7 @@ export default function Navbar() {
         <div
           className="font-meditative text-4xl lg:text-5xl hover:brightness-150 transition-all duration-200 cursor-pointer active:brightness-90"
           onMouseEnter={() => setShowSubNavService(false)}
+          onClick={() => router.push("/")}
         >
           Brahmma
         </div>
@@ -39,7 +45,7 @@ export default function Navbar() {
                 setShowSubNavGallery(false);
               }}
             >
-              <Navbtn text="Services" cta={() => console.log("services")} />
+              <Navbtn text="Services" cta={() => router.push("/services")} />
             </div>
             <div
               className="relative"
@@ -48,7 +54,7 @@ export default function Navbar() {
                 setShowSubNavGallery(true);
               }}
             >
-              <Navbtn text="Gallery" cta={() => console.log("Gallery")} />
+              <Navbtn text="Gallery" cta={() => router.push("/gallery")} />
             </div>
 
             <div
@@ -58,7 +64,7 @@ export default function Navbar() {
                 setShowSubNavGallery(false);
               }}
             >
-              <Navbtn text="Contact" cta={() => console.log("Contact")} />
+              <Navbtn text="Contact" cta={() => router.push("/contacts")} />
             </div>
           </div>
           <div className="inline-flex lg:space-x-12 space-x-5 items-center">
