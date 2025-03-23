@@ -28,7 +28,7 @@ export default function Navbar() {
 
   return (
     <div className="h-16 lg:h-36 text-cream w-full inline-flex flex-col items-center justify-between p-0 lg:p-4 sticky sm:fixed top-0 z-50">
-      <div className="m-0 lg:m-5 lg:max-h-[5rem] flex lg:bg-darkBlue/80 bg-darkBlue justify-between items-center w-full h-full relative px-8 lg:rounded-xl lg:backdrop-blur-[6px]">
+      <div className="m-0 lg:m-5 lg:max-h-[5rem] flex lg:bg-darkBlue/50 bg-darkBlue justify-between items-center w-full h-full relative px-8 lg:rounded-xl lg:backdrop-blur-[20px]">
         <div
           className="font-meditative text-4xl lg:text-5xl hover:brightness-150 transition-all duration-200 cursor-pointer active:brightness-90"
           onMouseEnter={() => setShowSubNavService(false)}

@@ -14,8 +14,8 @@ module.exports = {
         grayBlue: "#3D4D55",
         warmGray: "#A79E9C",
         cream: "#D3C3B9",
-        sandal: "B58863",
-        blk: "161616",
+        sandal: "#B58863",
+        blk: "#161616",
       },
       fontFamily: {
         meditative: ['"Meditative"', "cursive"],
