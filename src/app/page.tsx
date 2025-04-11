@@ -7,8 +7,15 @@ import hero1 from "@/images/hero1.jpg";
 import bgArt from "@/images/bgArt.svg";
 import { DragCards } from "@/components/DragCard";
 import ReviewBar from "@/components/ReviewBar";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+
+  const router = useRouter();
+
+  function goToServices(): void {
+    router.push("/services");
+  }
 
   return (
     <>
@@ -74,7 +81,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-screen h-[50vh] sm:h-screen relative flex items-center justify-start flex-col z-0 bg-cream scrollbar-hide">
+        <div className="w-screen h-[30vh] md:h-screen relative flex items-center justify-start flex-col z-0 bg-cream scrollbar-hide">
           <Image
             src={bgArt}
             alt="traditional art bg"
@@ -91,7 +98,7 @@ export default function Home() {
           />
 
           <div className="w-full h-full grid grid-cols-3 relative">
-            <div className=" col-span-2 flex sm:items-center  h-full w-full relative">
+            <div className=" col-span-3 md:col-span-2 flex sm:items-center  h-full w-full relative">
               <p
                 className="font-kryshna text-left text-darkBlue font-bold p-4 sm:p-8 tracking-wide leading-tighter"
                 style={{ fontSize: "clamp(2rem, 5vw, 15rem)" }}
@@ -105,7 +112,7 @@ export default function Home() {
                 Event Management
               </p>
             </div>
-            <div className=" col-span-1 flex flex-col items-center justify-center h-full w-full relative gap-5">
+            <div className="hidden md:col-span-1 md:flex flex-col items-center justify-center h-full w-full relative gap-5">
               <div className="w-[40vw] h-[30vw] md:absolute md:-right-20 md:-rotate-12 md:top-0  shadow-lg sm:shadow-xl md:shadow-2xl relative shadow-darkBlue/50 sm:shadow-darkBlue/50 md:shadow-darkBlue/75 lg:shadow-darkBlue  rounded-md sm:rounded-lg md:rounded-xl lg:rounded-3xl overflow-hidden">
                 <Image
                   src={hero1}
@@ -161,8 +168,8 @@ export default function Home() {
               </div>
 
               <div className="h-fit w-fit inline-block items-center justify-center cursor-pointer ">
-                <div className="group m-4 p-2 rounded-xl flex bg-cream sm:bg-darkBlue sm:hover:shadow-[0_0_100px_0px_theme(colors.cream/10)] transition-all active:scale-[98%] sm:hover:scale-[101%] z-20 duration-300">
-                  <span className="font-montserrat text-5xl  tracking-tighter text-darkBlue sm:text-cream ">
+                <div className="group m-4 p-2 rounded-xl flex bg-cream sm:bg-darkBlue sm:hover:shadow-[0_0_100px_0px_theme(colors.cream/10)] transition-all active:scale-[98%] sm:hover:scale-[101%] z-20 duration-300 select-none" onClick={() => goToServices()}>
+                  <span className="font-montserrat text-5xl  tracking-tighter text-darkBlue sm:text-cream focus:outline-none" >
                     explore
                   </span>
                   <span className="w-full h-full flex items-center justify-center ">
@@ -197,7 +204,7 @@ export default function Home() {
 
 
         {/* Footer */}
-        <div className="h-[10vh] w-full flex flex-col items-center justify-center relative bg-darkBlue rounded-t-[3rem]">
+        <div className="h-[10vh] w-full flex flex-col items-center justify-center relative bg-darkBlue rounded-t-[1rem] md:rounded-t-[3rem]">
           <h1 className="font-meditative text-cream text-xl sm:text-3xl">Brahmma</h1>
           <p className="text-cream text-xs font-montserrat">Decorations and Event Management</p>
         </div>
