@@ -1,5 +1,6 @@
 import Image from "next/image";
 import bgArt from "@/images/bgArt.svg";
+import user1 from "@/images/user1.jpg";
 
 import React from "react";
 
@@ -45,11 +46,13 @@ const ReviewCard = () => {
         </div>
 
         <div className="flex items-center mt-8 z-10">
-          <Image
-            className="flex-shrink-0 object-cover rounded-full w-11 h-11"
-            src="https://cdn.rareblocks.xyz/collection/clarity/images/testimonial/4/avatar-male-1.png"
-            alt=""
-          />
+          <div className="overflow-hidden rounded-full flex items-center justify-center relative w-12 h-12 bg-blk">
+            <Image
+              className=" absolute object-cover w-full h-full"
+              src={user1}
+              alt="user profile"
+            />
+          </div>
           <div className="ml-4">
             <p className="font-meditative text-blk text-3xl">Ansari</p>
             <p className="mt-0.5 text-xs font-pj text-blk">
