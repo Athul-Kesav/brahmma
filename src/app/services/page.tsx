@@ -91,12 +91,12 @@ export default function Services() {
           </div>
 
           {/*Mobile*/}
-          <div className="lg:hidden h-full flex flex-wrap items-center justify-center gap-2 w-full">
+          <div className="lg:hidden h-full flex flex-wrap items-center justify-center gap-2 w-full ">
             {imgs.map((img, index) => {
               return (
                 <div
                   key={index}
-                  className="w-full bg-white flex flex-row flex-wrap min-h-[20vh] md:min-h-[40vh] sm:max-w-[45vw] h-full gap-2 relative rounded-xl overflow-hidden"
+                  className="w-full bg-white flex flex-row flex-wrap min-h-[20vh] md:min-h-[40vh] sm:max-w-[45vw] h-full gap-2 relative rounded-xl overflow-hidden active:scale-95 transition-all duration-200 ease-in-out border-none" 
                 >
                   <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-darkBlue/95 via-darkBlue/50 to-darkBlue/95 z-10" />
                   <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-20">
