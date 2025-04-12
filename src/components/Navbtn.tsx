@@ -11,13 +11,13 @@ export default function Navbtn({ text, cta }: NavBtnProps) {
   return (
     <div>
       <div
-        className="text-cream group cursor-pointer inline-flex font-montserrat text-lg lg:text-xl hover:brightness-150 active:brightness-90 transition-all duration-200"
+        className="text-cream group cursor-pointer inline-flex font-montserrat text-3xl md:text-lg lg:text-xl hover:brightness-150 active:brightness-90 transition-all duration-200"
         onClick={cta}
       >
         <span className="pointer-events-none select-none">
         {text}
         </span>
-        <span>
+        <span className="hidden sm:block">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

@@ -1,17 +1,37 @@
+"use client";
+import { useRouter } from "next/navigation";
 import Image, { StaticImageData } from "next/image";
 import React from "react";
 
 type cardProps = {
   imgs: StaticImageData[];
-  imgNames: string[];
+  serviceNames: string[];
   item: number;
 };
 
-const GridCard = ({ imgs, imgNames, item }: cardProps) => {
-  const titleWords = imgNames[item].split(" ");
+const serviceRoutes = {
+  0: "/services/birthdayParty",
+  1: "/services/babyShower",
+  2: "/services/collegeFest",
+  3: "/services/corporateEvent",
+  4: "/services/engagement",
+  5: "/services/party",
+  6: "/services/reception",
+  7: "/services/wedding",
+  8: "/services/shopOpening",
+};
 
+const GridCard = ({ imgs, serviceNames, item }: cardProps) => {
+  const titleWords = serviceNames[item].split(" ");
+
+  const router = useRouter();
   return (
-    <div className="h-full w-full relative rounded-xl overflow-hidden group cursor-pointer active:scale-[98%] transition-all duration-200 ease-in-out border-none">
+    <div
+      className="h-full w-full relative rounded-xl overflow-hidden group cursor-pointer active:scale-[98%] transition-all duration-200 ease-in-out border-none"
+      onClick={() => {
+        router.push(serviceRoutes[item as keyof typeof serviceRoutes]);
+      }}
+    >
       {/* Overlay with gradient, fade, and blur */}
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-darkBlue/30 to-darkBlue z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none blur-sm  group-hover:blur-0 group-hover:scale-100 ease-in-out" />
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-darkBlue/50 to-transparent z-10" />
@@ -30,7 +50,7 @@ const GridCard = ({ imgs, imgNames, item }: cardProps) => {
       {/* Background Image */}
       <Image
         src={imgs[item]}
-        alt={imgNames[item]}
+        alt={serviceNames[item]}
         layout="fill"
         objectFit="cover"
         objectPosition="center"

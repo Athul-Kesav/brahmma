@@ -1,28 +1,22 @@
 import Image from "next/image";
 import bgArt from "@/images/bgArt.svg";
 import user1 from "@/images/user1.jpg";
-
 import React from "react";
 
 const ReviewCard = () => {
   return (
-    <div className="flex flex-col overflow-hidden relative shadow-xl rounded-xl sm:my-6">
-      <Image
-        src={bgArt}
-        alt="traditional art bg"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="bottom"
-        className="object-contain mix-blend-hard-light saturate-0 opacity-[15%] scale-[250%] z-0"
-      />
-      <div className="flex flex-col justify-between flex-1 p-6 bg-sandal lg:py-8 lg:px-7">
-        <div className="flex-1 z-10">
+    <div className="relative overflow-hidden shadow-xl rounded-xl sm:my-6 md:my-2 min-w-[300px] h-full">
+      {/* Background Art */}
+      
+      {/* Foreground Content */}
+      <div className="flex flex-col justify-between flex-1 p-6 bg-sandal lg:py-8 lg:px-7 relative z-10">
+        <div className="flex-1">
+          {/* Stars */}
           <div className="flex items-center">
-            {/* Stars */}
             {[...Array(4)].map((_, index) => (
               <div
                 key={index}
-                className="w-5 h-5 flex items-center justify-center"
+                className="flex items-center justify-center w-5 h-5"
               >
                 <svg
                   className="w-5 h-5 text-darkBlue"
@@ -36,7 +30,8 @@ const ReviewCard = () => {
             ))}
           </div>
 
-          <blockquote className="flex-1 mt-8 z-10">
+          {/* Review Text */}
+          <blockquote className="mt-8">
             <p className="text-sm lg:text-lg leading-relaxed text-blk font-montserrat">
               “You made it so simple. My new site is so much faster and easier
               to work with than my old site. I just choose the page, make the
@@ -45,17 +40,19 @@ const ReviewCard = () => {
           </blockquote>
         </div>
 
-        <div className="flex items-center mt-8 z-10">
-          <div className="overflow-hidden rounded-full flex items-center justify-center relative w-12 h-12 bg-blk">
+        {/* User Info */}
+        <div className="flex items-center mt-8">
+          <div className="relative flex items-center justify-center w-12 h-12 overflow-hidden rounded-full bg-blk">
             <Image
-              className=" absolute object-cover w-full h-full"
               src={user1}
               alt="user profile"
+              layout="fill"
+              className="object-cover"
             />
           </div>
           <div className="ml-4">
-            <p className="font-meditative text-blk text-3xl">Ansari</p>
-            <p className="mt-0.5 text-xs font-pj text-blk">
+            <p className="text-3xl text-blk font-meditative">Ansari</p>
+            <p className="mt-0.5 text-xs text-blk font-pj">
               Our Latest Customer
             </p>
           </div>

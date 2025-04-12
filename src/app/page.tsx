@@ -8,9 +8,9 @@ import bgArt from "@/images/bgArt.svg";
 import { DragCards } from "@/components/DragCard";
 import ReviewBar from "@/components/ReviewBar";
 import { useRouter } from "next/navigation";
+import Footer from "@/components/Footer";
 
 export default function Home() {
-
   const router = useRouter();
 
   function goToServices(): void {
@@ -49,7 +49,7 @@ export default function Home() {
             />
           </div>
           <div className="row-span-1 h-[7rem] translate-y-5 sm:translate-y-0 sm:h-full  relative w-full flex-col items-center flex justify-center">
-            <div className="w-11/12 h-1 absolute top-0 shadow-lg m-2 sm:m-4 shadow-black/75 bg-warmGray rounded-full" />
+            <div className="w-11/12 h-1 absolute top-0 shadow-lg m-2 sm:m-4 shadow-blk/75 bg-warmGray rounded-full" />
             <div className="h-1/2 w-11/12 flex items-center justify-between">
               <div className="flex flex-row items-center justify-between w-full space-x-3">
                 <div className="flex flex-col items-start -space-y-2 sm:-space-y-3">
@@ -77,7 +77,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="w-11/12 h-1 absolute bottom-0 shadow-lg m-2 sm:m-4 shadow-black/75 bg-warmGray rounded-full" />
+            <div className="w-11/12 h-1 absolute bottom-0 shadow-lg m-2 sm:m-4 shadow-blk/75 bg-warmGray rounded-full" />
           </div>
         </div>
 
@@ -150,7 +150,7 @@ export default function Home() {
         </div>
 
         <div className="h-[70vh] w-full flex items-center justify-center relative">
-          <div className="w-11/12 h-1 absolute top-0 -z-10 shadow-lg m-2 sm:m-4 shadow-black/75 bg-warmGray rounded-full" />
+          <div className="w-11/12 h-1 absolute top-0 -z-10 shadow-lg m-2 sm:m-4 shadow-blk/75 bg-warmGray rounded-full" />
           <div className="h-5/6 w-11/12 bg-darkBlue rounded-3xl grid grid-cols-3 overflow-hidden">
             <div className="lg:col-span-1 lg:flex hidden flex-col items-center justify-center ">
               <p className="h-fit w-fit text-cream font-meditative text-8xl leading-[5rem]">
@@ -168,8 +168,11 @@ export default function Home() {
               </div>
 
               <div className="h-fit w-fit inline-block items-center justify-center cursor-pointer ">
-                <div className="group m-4 p-2 rounded-xl flex bg-cream sm:bg-darkBlue sm:hover:shadow-[0_0_100px_0px_theme(colors.cream/10)] transition-all active:scale-[98%] sm:hover:scale-[101%] z-20 duration-300 select-none" onClick={() => goToServices()}>
-                  <span className="font-montserrat text-5xl  tracking-tighter text-darkBlue sm:text-cream focus:outline-none" >
+                <div
+                  className="group m-4 p-2 rounded-xl flex bg-cream sm:bg-darkBlue sm:hover:shadow-[0_0_100px_0px_theme(colors.cream/10)] transition-all active:scale-[98%] sm:hover:scale-[101%] z-20 duration-300 select-none"
+                  onClick={() => goToServices()}
+                >
+                  <span className="font-montserrat text-5xl  tracking-tighter text-darkBlue sm:text-cream focus:outline-none">
                     explore
                   </span>
                   <span className="w-full h-full flex items-center justify-center ">
@@ -196,18 +199,12 @@ export default function Home() {
           <div className="w-11/12 h-1 absolute bottom-0 -z-10 shadow-lg m-2 sm:m-4 shadow-black/75 bg-warmGray rounded-full" />
         </div>
 
-        <div
-          className="h-[50vh] w-[100vw] overflow-auto md:overflow-hidden flex flex-row items-start md:items-center justify-center space-x-6 px-6 py-7 scrollbar-hide"
-        >
+        <div className="h-full w-[100vw] flex px-6 py-7 ">
           <ReviewBar />
         </div>
 
-
         {/* Footer */}
-        <div className="h-[10vh] w-full flex flex-col items-center justify-center relative bg-darkBlue rounded-t-[1rem] md:rounded-t-[3rem]">
-          <h1 className="font-meditative text-cream text-xl sm:text-3xl">Brahmma</h1>
-          <p className="text-cream text-xs font-montserrat">Decorations and Event Management</p>
-        </div>
+        <Footer />
       </div>
     </>
   );

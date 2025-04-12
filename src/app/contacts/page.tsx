@@ -2,10 +2,9 @@
 import Image from "next/image";
 
 import Navbar from "@/components/Navbar";
-import hero1 from "@/images/hero1.jpg";
+import hero2 from "@/images/hero2.jpg";
 
 import bgArt from "@/images/bgArt.svg";
-import ContactCard from "@/components/ContactCard";
 
 export default function Services() {
   return (
@@ -16,14 +15,14 @@ export default function Services() {
 
         <div className="w-full h-screen relative flex items-center justify-center flex-col z-0">
           <Image
-            src={hero1}
+            src={hero2}
             layout="fill"
             alt="HeroImg"
             objectFit="cover"
             objectPosition="bottom"
             className="object-contain"
           />
-          <div className="overlay h-full w-full bg-gradient-to-br from-black via-black/80 to-transparent inset-0 z-0"></div>
+          <div className="overlay h-full w-full bg-gradient-to-br from-black/25 via-black/10 to-transparent inset-0 z-0"></div>
           <h1 className="absolute top-1/2 left-1/2 text-5xl lg:text-7xl font-meditative text-cream transform -translate-x-1/2 -translate-y-1/2">
             Get in touch
           </h1>
