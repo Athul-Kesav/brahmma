@@ -1,5 +1,4 @@
 import Image from "next/image";
-import bgArt from "@/images/bgArt.svg";
 import user1 from "@/images/user1.jpg";
 import React from "react";
 
