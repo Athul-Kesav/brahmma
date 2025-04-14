@@ -199,6 +199,7 @@ export default function Home() {
                     </span>
                   </div>
                 </div>
+                
               </div>
             </div>
             <div className="w-11/12 h-1 absolute bottom-0 -z-10 shadow-lg m-2 sm:m-4 shadow-black/75 bg-warmGray rounded-full" />

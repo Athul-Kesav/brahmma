@@ -57,7 +57,7 @@ export default function ReviewBar() {
       </motion.div>
 
       {/* Chevron Arrows Positioned at Bottom Right */}
-      <div className="absolute bottom-4 right-4 flex gap-2 z-20 transition-all duration-500 ease-in-out">
+      <div className="absolute bottom-4 right-4 hidden md:flex gap-2 z-20 transition-all duration-500 ease-in-out">
         <button
           onClick={handleRightArrow}
           className="p-2 bg-cream rounded-full hover:bg-sandal focus:outline-none"

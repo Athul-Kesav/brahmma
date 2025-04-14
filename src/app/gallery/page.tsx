@@ -9,9 +9,9 @@ export default function Gallery() {
     <>
       <ReactLenis root options={{ lerp: 0.07 }}>
         <Navbar />
-        <div className="w-screen h-fit relative top-0 flex items-center justify-center flex-col z-0 bg-grayBlue">
+        <div className="w-screen h-fit relative top-0 flex items-center justify-center flex-col z-0 bg-sandal">
           {/*Services Page*/}
-          <div className="w-screen sm:mt-16 bg-pink-400 lg:mt-32 p-1 md:p-5 flex flex-col items-center justify-center md:gap-7 gap-5">
+          <div className="w-screen sm:mt-16 lg:mt-32 p-5 flex flex-col items-center justify-center md:gap-7 gap-5">
             <YearlyGallery year={2025} />
             <YearlyGallery year={2024} />
             <YearlyGallery year={2023} />
