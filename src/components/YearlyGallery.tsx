@@ -2,17 +2,18 @@
 
 import React from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+//import { useRouter } from "next/navigation";
 
 import hero1 from "@/images/hero1.jpg";
 
 const YearlyGallery = ({ year }: { year: number }) => {
-  const router = useRouter();
+  //const router = useRouter();
   const handleClick = () => {
-    router.push("/gallery/2023");
+    console.log("Going to gallery for particular year");
   };
   return (
-    <div className=" relative flex w-full md:w-2/3 origin-bottom overflow-hidden min-h-[10rem] max-h-[20rem]  p-5 items-center justify-center rounded-xl lg:rounded-3xl md:hover:rounded-none cursor-pointer md:hover:w-full md:hover:p-32 md:hover:rounded-none  md:shadow-lg md:hover:shadow-2xl transition-all duration-700 ease-in-out active:scale-[95%] active:duration-200">
+    <div className=" relative flex w-full md:w-2/3 origin-bottom overflow-hidden min-h-[10rem] max-h-[20rem]  p-5 items-center justify-center rounded-xl lg:rounded-3xl cursor-pointer md:hover:w-full md:hover:p-32 md:hover:rounded-none  md:shadow-lg md:hover:shadow-2xl transition-all duration-700 ease-in-out active:scale-[95%] active:duration-200"
+    onClick={handleClick}>
       {/*Overlay*/}
       <div className="absolute inset-0 bg-gradient-to-r from-blk to-transparent rounded-xl lg:rounded-3xl md:hover:rounded-none transition-all duration-500 ease-in-out z-10" />
       {/*Image*/}

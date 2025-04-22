@@ -6,8 +6,15 @@ import Navbar from "@/components/Navbar";
 import hero2 from "@/images/hero2.jpg";
 
 import bgArt from "@/images/bgArt.svg";
+import { useState } from "react";
+import FloatingLabelInput from "@/components/InputBox";
 
 export default function Services() {
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const [message, setMessage] = useState("");
+  const [phone, setPhone] = useState("");
+
   return (
     <>
       <ReactLenis root options={{ lerp: 0.07 }}>
@@ -25,76 +32,114 @@ export default function Services() {
               className="object-contain"
             />
             <div className="overlay h-full w-full bg-gradient-to-br from-black/25 via-black/10 to-transparent inset-0 z-0"></div>
-            <h1 className="absolute top-1/2 left-1/2 text-5xl lg:text-7xl font-meditative text-cream transform -translate-x-1/2 -translate-y-1/2">
+            <h1 className="absolute leading-none top-1/2 left-1/2 text-5xl lg:text-7xl font-meditative text-cream transform -translate-x-1/2 -translate-y-1/2">
               Get in touch
             </h1>
           </div>
 
-          <div className="w-full h-fit flex">
+          <div className="w-full h-full flex flex-col">
             <Image
               src={bgArt}
               alt="traditional art bg"
-              fill
-              className="object-cover object-bottom mix-blend-hard-light saturate-0 opacity-[15%]"
+              layout="fill"
+              objectFit="cover"
+              objectPosition="bottom"
+              className="object-contain mix-blend-hard-light saturate-0 opacity-[15%]"
               style={{
                 maskImage:
-                  "linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0))",
+                  " linear-gradient(to bottom right, rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0)",
                 WebkitMaskImage:
-                  "linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0))",
+                  " linear-gradient(to bottom right, rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0)",
               }}
             />
-            <div className="w-3/5 h-full md:flex hidden flex-col items-start justify-end mx-auto">
-              <span className="font-sallim md:text-6xl lg:text-7xl text-darkBlue mt-10 p-7 leading-[7rem]">
+
+            <div className="w-full h-full sm:flex hidden flex-col items-start justify-end mx-auto">
+              <span className="font-sallim text-4xl md:text-6xl lg:text-7xl text-darkBlue mt-10 p-7 leading-[7rem]">
                 Get things done <br />
-                <span className="font-meditative md:text-[10rem] lg:text-[15rem] text-darkBlue leading-[7rem]">
+                <span className="font-meditative sm:text-[7rem] md:text-[10rem] lg:text-[15rem] text-darkBlue sm:leading-[1rem] md:leading-[7rem]">
                   bold
                 </span>{" "}
                 and{" "}
-                <span className="font-meditative md:text-[10rem] lg:text-[15rem] text-darkBlue leading-[7rem]">
+                <span className="font-meditative sm:text-[7rem] md:text-[10rem] lg:text-[15rem] text-darkBlue sm:leading-[1rem] md:leading-[7rem]">
                   beautiful
                 </span>
               </span>
             </div>
-            <div className="md:w-2/5 w-full h-full flex flex-col items-center justify-center md:p-16 p-7 gap-2 z-10">
-              <div className="w-full h-1/2  flex flex-col items-center justify-start gap-2 md:p-10 p-5 rounded-xl bg-gradient-to-br from-darkBlue/50 via-darkBlue/25 to-darkBlue/50 backdrop-blur-[5px] shadow-2xl">
-                <span className="font-montserrat text-4xl md:text-3xl text-center lg:text-4xl text-darkBlue leading-[7rem]">
-                  Reach us Here
-                </span>
-                <div className=" w-full h-full flex flex-col items-start justify-center gap-12">
-                  <div className="flex flex-col items-start justify-center">
-                    <span className="font-montserrat text-xl tracking-tight">
-                      Email{" "}
-                    </span>
-                    <span className="font-jupiteroid text-xl md:text-2xl lg:text-4xl">
-                      brahmmaevents@gmail.com
-                    </span>
-                  </div>
-                  <div className="flex flex-col items-start justify-center">
-                    <span className="font-montserrat text-xl tracking-tight">
-                      Phone{" "}
-                    </span>
-                    <span className="font-jupiteroid text-xl md:text-2xl lg:text-4xl">
-                      +91 7373730935
-                    </span>
-                  </div>
+
+            {/*Contact Form*/}
+            <div className="w-full h-full flex  flex-col-reverse sm:flex-row items-center justify-center p-10">
+              <div className="flex flex-col items-center justify-center w-full h-full   space-y-5">
+                <h1 className="font-meditative text-darkBlue text-4xl sm:text-6xl lg:text-7xl mb-5">
+                  Or Call Us
+                </h1>
+                <p className="text-darkBlue text-lg sm:text-xl lg:text-2xl font-montserrat">
+                  +91 12345 67890
+                </p>
+                <p className="text-darkBlue text-lg sm:text-xl lg:text-2xl font-montserrat">
+                  +91 98765 43210
+                </p>
+                <div className="flex flex-col items-center justify-center w-full h-full p-10 font-sallim text-5xl lg:text-8xl relative z-20">
+                  <span className="font-meditative z-10 text-darkBlue">Brahmma </span> <span className="font-sallim text-sandal text-[7rem] font-thin  -rotate-[10deg] "> Decors</span>
+                </div>
+              </div>
+              <div className="flex flex-col items-center justify-center w-full h-full p-10  relative z-20 ">
+                <h1 className="font-meditative text-darkBlue text-4xl sm:text-6xl lg:text-7xl mb-5">
+                  Contact Us
+                </h1>
+                <form className="w-full flex flex-col items-center justify-center space-y-5 pointer-events-auto">
+                  <FloatingLabelInput
+                    label="Full Name"
+                    type="text"
+                    required
+                    autoComplete="full name"
+                    onChange={(e) => setName(e.target.value)}
+                    value={name}
+                  />
+                  <FloatingLabelInput
+                    label="Email Address"
+                    type="email"
+                    required
+                    autoComplete="username"
+                    onChange={(e) => setEmail(e.target.value)}
+                    value={email}
+                  />
+
+                  <FloatingLabelInput
+                    label="Phone Number"
+                    type="tel"
+                    required
+                    autoComplete="tel"
+                    onChange={(e) => setPhone(e.target.value)}
+                    value={phone}
+                  />
+
+                  <FloatingLabelInput
+                    label="Message"
+                    type="test"
+                    required
+                    onChange={(e) => setMessage(e.target.value)}
+                    value={message}
+                  />
+                </form>
+                <div className="w-fit h-fit p-3 px-5 m-5 bg-darkBlue hover:scale-[105%] duration-300 transition-all active:scale-100 z-20 rounded-lg  flex flex-col items-center justify-center text-cream font-montserrat cursor-pointer">
+                  Submit
                 </div>
               </div>
             </div>
           </div>
+
           <div className="w-full h-fit bg-darkBlue relative">
             <div className="w-full z-10 h-[50vh] sm:h-[90vh] flex flex-col items-center justify-center bg-darkBlue p-10">
-              
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23324.99885578058!2d79.8290828211083!3d10.912939645602426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5511360f384943%3A0xa8ece3a856deaa62!2sBrahmma%20Decorators!5e1!3m2!1sen!2sin!4v1744390995122!5m2!1sen!2sin"
-                  width="full"
-                  height="full"
-                  style={{ border: "0" }}
-                  allowFullScreen={true}
-                  loading="eager"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  className="w-full h-full rounded-3xl shadow-lg"
-                />
-              
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23324.99885578058!2d79.8290828211083!3d10.912939645602426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5511360f384943%3A0xa8ece3a856deaa62!2sBrahmma%20Decorators!5e1!3m2!1sen!2sin!4v1744390995122!5m2!1sen!2sin"
+                width="full"
+                height="full"
+                style={{ border: "0" }}
+                allowFullScreen={true}
+                loading="eager"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="w-full h-full rounded-3xl shadow-lg"
+              />
             </div>
 
             {/*Footer*/}
