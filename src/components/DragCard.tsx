@@ -119,7 +119,7 @@ const Card = ({ containerRef, src, alt, top, left, rotate, className }:CardProps
         zIndex,
       }}
       className={twMerge(
-        "drag-elements absolute w-32 lg:w-64 bg-warmGray p-1 pb-4 cursor-grab",
+        "drag-elements absolute w-32 lg:w-64 bg-warmGray p-1 pb-4 cursor-grab active:cursor-grabbing",
         className
       )}
       src={src}

@@ -80,13 +80,14 @@ export default function Home() {
                       events
                     </p>
                   </div>
+
                 </div>
               </div>
-              <div className="w-11/12 h-1 absolute bottom-0 shadow-lg m-2 sm:m-4 shadow-blk/75 bg-warmGray rounded-full" />
+              <div className="w-11/12 h-1 absolute bottom-0 shadow-lg mb-2 sm:m-4 shadow-blk/75 bg-warmGray rounded-full" />
             </div>
           </div>
 
-          <div className="w-screen h-[30vh] md:h-screen relative flex items-center justify-start flex-col z-0 bg-cream scrollbar-hide">
+          <div className="w-screen h-[30vh] md:h-screen relative flex items-center justify-center flex-col z-0 bg-cream scrollbar-hide">
             <Image
               src={bgArt}
               alt="traditional art bg"
@@ -103,10 +104,10 @@ export default function Home() {
             />
 
             <div className="w-full h-full grid grid-cols-3 relative">
-              <div className=" col-span-3 md:col-span-2 flex sm:items-center  h-full w-full relative">
+              <div className=" col-span-3 md:col-span-2 flex sm:items-center h-full w-full relative flex-col justify-center">
                 <p
                   className="font-kryshna text-left text-darkBlue font-bold p-4 sm:p-8 tracking-wide leading-tighter"
-                  style={{ fontSize: "clamp(2rem, 5vw, 15rem)" }}
+                  style={{ fontSize: "clamp(1.8rem, 4vw, 10rem)" }}
                 >
                   Bringing Your Special
                   <br />
@@ -152,10 +153,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
+            <div className="w-11/12 h-1 absolute -bottom-3 -z-10 shadow-lg m-2 sm:m-4 shadow-blk/75 bg-warmGray rounded-full" />
           </div>
 
           <div className="h-[70vh] w-full flex items-center justify-center relative">
-            <div className="w-11/12 h-1 absolute top-0 -z-10 shadow-lg m-2 sm:m-4 shadow-blk/75 bg-warmGray rounded-full" />
+            
             <div className="h-5/6 w-11/12 bg-darkBlue rounded-3xl grid grid-cols-3 overflow-hidden">
               <div className="lg:col-span-1 lg:flex hidden flex-col items-center justify-center ">
                 <p className="h-fit w-fit text-cream font-meditative text-8xl leading-[5rem]">
