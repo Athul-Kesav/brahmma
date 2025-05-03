@@ -176,10 +176,10 @@ export default function Home() {
 
                 <div className="h-fit w-fit inline-block items-center justify-center cursor-pointer ">
                   <div
-                    className="group m-4 p-2 rounded-xl flex bg-cream sm:bg-darkBlue sm:hover:shadow-[0_0_100px_0px_theme(colors.cream/10)] transition-all active:scale-[98%] sm:hover:scale-[101%] z-20 duration-300 select-none"
+                    className="group m-4 p-2 rounded-xl flex bg-cream items-center justify-center sm:bg-darkBlue sm:hover:shadow-[0_0_100px_0px_theme(colors.cream/10)] transition-all active:scale-[98%] sm:hover:scale-[101%] z-20 duration-300 select-none"
                     onClick={() => goToServices()}
                   >
-                    <span className="font-montserrat text-5xl  tracking-tighter text-darkBlue sm:text-cream focus:outline-none">
+                    <span className="font-montserrat text-4xl sm:text-5xl  tracking-tighter text-darkBlue sm:text-cream focus:outline-none">
                       explore
                     </span>
                     <span className="w-full h-full flex items-center justify-center ">
@@ -193,12 +193,13 @@ export default function Home() {
                         strokeWidth="1.25"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="lucide lucide-arrow-right stroke-darkBlue sm:stroke-cream sm:rotate-90 sm:group-hover:-rotate-45  sm:transition-all sm:duration-500  sm:opacity-0 sm:group-hover:opacity-100"
+                        className="lucide lucide-arrow-right stroke-darkBlue sm:stroke-cream sm:rotate-90 sm:group-hover:-rotate-45  sm:transition-all sm:duration-500  sm:opacity-0 sm:group-hover:opacity-100 sm:scale-100 scale-75"
                       >
                         <path d="M5 12h14" />
                         <path d="m12 5 7 7-7 7" />
                       </svg>
                     </span>
+
                   </div>
                 </div>
                 
