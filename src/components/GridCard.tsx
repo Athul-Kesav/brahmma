@@ -54,7 +54,7 @@ const GridCard = ({ imgs, serviceNames, item }: cardProps) => {
         layout="fill"
         objectFit="cover"
         objectPosition="center"
-        className="z-0"
+        className="z-0 group-hover:scale-110 transition-all duration-500 ease-in-out"
       />
 
       <div className="absolute bottom-0 right-0 opacity-0 group-hover:opacity-100 z-30">
