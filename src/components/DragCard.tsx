@@ -4,6 +4,14 @@ import React, { useRef, useState, RefObject } from "react";
 import { motion } from "framer-motion";
 import { twMerge } from "tailwind-merge";
 
+import pic1 from "../images/pic1.jpg";
+import pic2 from "../images/pic2.jpg";
+import pic3 from "../images/pic3.jpg";
+import pic4 from "../images/pic4.jpg";
+import pic5 from "../images/pic5.jpg";
+import pic6 from "../images/pic6.jpg";
+import { StaticImageData } from "next/image";
+
 export const DragCards = () => {
   return (
     <div className="relative grid h-full w-full place-content-center overflow-hidden">
@@ -22,16 +30,16 @@ const Cards = () => {
     <div className="absolute inset-0 z-10" ref={containerRef}>
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1635373670332-43ea883bb081?q=80&w=2781&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src= {pic1}
         alt="Example image"
         rotate="6deg"
         top="20%"
         left="25%"
-        className="w-36 md:w-56"
+        className="w-36 md:w-72"
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1576174464184-fb78fe882bfd?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src= {pic2}
         alt="Example image"
         rotate="12deg"
         top="45%"
@@ -40,7 +48,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1503751071777-d2918b21bbd9?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src= {pic3}
         alt="Example image"
         rotate="-6deg"
         top="20%"
@@ -49,7 +57,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1620428268482-cf1851a36764?q=80&w=2609&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src= {pic4}
         alt="Example image"
         rotate="8deg"
         top="50%"
@@ -58,7 +66,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1602212096437-d0af1ce0553e?q=80&w=2671&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src={pic5}
         alt="Example image"
         rotate="18deg"
         top="20%"
@@ -67,7 +75,7 @@ const Cards = () => {
       />
       <Card
         containerRef={containerRef}
-        src="https://images.unsplash.com/photo-1622313762347-3c09fe5f2719?q=80&w=2640&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        src={pic6}
         alt="Example image"
         rotate="-3deg"
         top="35%"
@@ -80,7 +88,7 @@ const Cards = () => {
 
 interface CardProps {
     containerRef: RefObject<HTMLElement | null>; // Allow null
-    src: string;
+    src: StaticImageData;
     alt: string;
     top: string;
     left: string;
@@ -119,10 +127,10 @@ const Card = ({ containerRef, src, alt, top, left, rotate, className }:CardProps
         zIndex,
       }}
       className={twMerge(
-        "drag-elements absolute w-32 lg:w-64 bg-warmGray p-1 pb-4 cursor-grab active:cursor-grabbing",
+        "drag-elements absolute w-32 lg:w-72 bg-warmGray p-1 cursor-grab active:cursor-grabbing rounded-md lg:rounded-lg  shadow-lg shadow-darkBlue/50",
         className
       )}
-      src={src}
+      src={src.src}
       alt={alt}
       drag
       dragConstraints={containerRef}

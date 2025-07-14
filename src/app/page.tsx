@@ -7,6 +7,9 @@ import { ReactLenis } from "lenis/react";
 import React from "react";
 
 import hero1 from "@/images/hero1.jpg";
+import hero3 from "@/images/hero3.jpg";
+import hero4 from "@/images/hero4.jpg";
+import hero5 from "@/images/hero5.jpg";
 import bgArt from "@/images/bgArt.svg";
 import { DragCards } from "@/components/DragCard";
 import ReviewBar from "@/components/ReviewBar";
@@ -121,7 +124,7 @@ export default function Home() {
               <div className="hidden md:col-span-1 md:flex flex-col items-center justify-center h-full w-full relative gap-5">
                 <div className="w-[40vw] h-[30vw] md:absolute md:-right-20 md:-rotate-12 md:top-0  shadow-lg sm:shadow-xl md:shadow-2xl relative shadow-darkBlue/50 sm:shadow-darkBlue/50 md:shadow-darkBlue/75 lg:shadow-darkBlue  rounded-md sm:rounded-lg md:rounded-xl lg:rounded-3xl overflow-hidden">
                   <Image
-                    src={hero1}
+                    src={hero4}
                     layout="fill"
                     alt="HeroImg"
                     objectFit="cover"
@@ -132,7 +135,7 @@ export default function Home() {
 
                 <div className="w-[40vw] h-[30vw] md:absolute md:-right-32 md:rotate-[10deg] md:top-1/4 md:transform md:origin-bottom-right shadow-lg sm:shadow-xl md:shadow-2xl relative shadow-darkBlue/50 sm:shadow-darkBlue/50 md:shadow-darkBlue/75 lg:shadow-darkBlue rounded-md sm:rounded-lg md:rounded-xl lg:rounded-3xl overflow-hidden">
                   <Image
-                    src={hero1}
+                    src={hero3}
                     layout="fill"
                     alt="HeroImg"
                     objectFit="cover"
@@ -143,12 +146,12 @@ export default function Home() {
 
                 <div className="w-[40vw] h-[30vw] hidden sm:block md:absolute md:left-64 md:-rotate-[30deg] md:top-[55%] md:transform md:origin-bottom-left shadow-lg sm:shadow-xl md:shadow-2xl relative shadow-darkBlue/50 sm:shadow-darkBlue/50 md:shadow-darkBlue/75 lg:shadow-darkBlue rounded-md sm:rounded-lg md:rounded-xl lg:rounded-3xl overflow-hidden">
                   <Image
-                    src={hero1}
+                    src={hero5}
                     layout="fill"
                     alt="HeroImg"
                     objectFit="cover"
                     objectPosition="bottom"
-                    className="object-contain "
+                    className="object-contain scale-150"
                   />
                 </div>
               </div>
