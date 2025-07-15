@@ -113,21 +113,21 @@ export default async function Service({ params }: PageProps) {
             {desc}
           </p>
         </div>
-        <div className="flex flex-col relative md:flex-row items-center justify-center w-full h-[90vh] bg-cream px-6 py-12 gap-8">
+        <div className="flex flex-col relative md:flex-row items-center justify-center w-full h-[90vh] bg-cream px-6 py-12 md:gap-8">
           {/* Image Section */}
-          <div className="w-full relative md:w-2/3 h-full py-24 ">
+          <div className="w-full relative md:w-2/3 md:h-full h-[80vh] py-24 ">
             <Image
             src={imageUrl}
             alt={title}
             layout="fill"
             objectFit="cover"
             objectPosition="center"
-            className="z-0  relative rounded-3xl"
+            className="z-0 relative rounded-xl md:rounded-3xl"
           />
           </div>
           {/* Text Section */}
-          <div className="w-full md:w-1/3 items-start pt-24 flex justify-between flex-col text-center md:text-left m-6 h-full">
-            <p className="text-2xl font-montserrat font-base text-darkBlue  mb-36">
+          <div className="w-full md:w-1/3 items-start flex justify-between flex-col text-left md:m-6 h-full">
+            <p className="text-2xl font-montserrat font-base text-darkBlue my-10">
               {details}
             </p>
             <BookNowBtn />

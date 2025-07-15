@@ -1,19 +1,46 @@
 "use client";
 import Image from "next/image";
 import { ReactLenis } from "lenis/react";
+import emailjs from "@emailjs/browser";
 
 import Navbar from "@/components/Navbar";
 import hero2 from "@/images/hero2.jpg";
 
 import bgArt from "@/images/bgArt.svg";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FloatingLabelInput from "@/components/InputBox";
+import SubmitBtn from "@/components/SubmitBtn";
 
 export default function Services() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
-  const [message, setMessage] = useState("");
+  const [eventType, setEventType] = useState("");
   const [phone, setPhone] = useState("");
+  const [statusMessage, setStatusMessageState] = useState<{
+    text: string;
+    isError: boolean;
+  }>({ text: "null", isError: false });
+
+  const setStatusMessage = (text: string, isError = false) => {
+    setStatusMessageState({ text, isError });
+  };
+
+  const details = {
+    name,
+    email,
+    eventType,
+    phone,
+  };
+
+  const resetFuncs = () => {
+    setName("");
+    setEmail("");
+    setEventType("");
+    setPhone("");
+    setTimeout(() => {
+      setStatusMessage("null");
+    }, 1250);
+  };
 
   return (
     <>
@@ -44,12 +71,12 @@ export default function Services() {
               layout="fill"
               objectFit="cover"
               objectPosition="bottom"
-              className="object-contain mix-blend-hard-light saturate-0 opacity-[15%]"
+              className="object-contain mix-blend-hard-light saturate-0 opacity-[10%]"
               style={{
                 maskImage:
-                  " linear-gradient(to bottom right, rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0)",
+                  " linear-gradient(to bottom right, rgba(0, 0, 0,0.8),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0)",
                 WebkitMaskImage:
-                  " linear-gradient(to bottom right, rgba(0, 0, 0, 0.7),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0)",
+                  " linear-gradient(to bottom right, rgba(0, 0, 0,0.8),rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0)",
               }}
             />
 
@@ -67,26 +94,12 @@ export default function Services() {
             </div>
 
             {/*Contact Form*/}
-            <div className="w-full h-full flex  flex-col-reverse sm:flex-row items-center justify-center p-10">
-              <div className="flex flex-col items-center justify-center w-full h-full   space-y-5">
-                <h1 className="font-meditative text-darkBlue text-4xl sm:text-6xl lg:text-7xl mb-5">
-                  Or Call Us
-                </h1>
-                <p className="text-darkBlue text-lg sm:text-xl lg:text-2xl font-montserrat">
-                  +91 12345 67890
-                </p>
-                <p className="text-darkBlue text-lg sm:text-xl lg:text-2xl font-montserrat">
-                  +91 98765 43210
-                </p>
-                <div className="flex flex-col items-center justify-center w-full h-full p-10 font-sallim text-5xl lg:text-8xl relative z-20">
-                  <span className="font-meditative z-10 text-darkBlue">Brahmma </span> <span className="font-sallim text-sandal text-[7rem] font-thin  -rotate-[10deg] "> Decors</span>
-                </div>
-              </div>
+            <div className="w-full h-full flex  flex-col space-y-7 sm:flex-row items-center justify-center p-10">
               <div className="flex flex-col items-center justify-center w-full h-full p-10  relative z-20 ">
                 <h1 className="font-meditative text-darkBlue text-4xl sm:text-6xl lg:text-7xl mb-5">
-                  Contact Us
+                  Reach Us
                 </h1>
-                <form className="w-full flex flex-col items-center justify-center space-y-5 pointer-events-auto">
+                <form className="w-full flex flex-col items-center justify-center  pointer-events-auto">
                   <FloatingLabelInput
                     label="Full Name"
                     type="text"
@@ -114,15 +127,49 @@ export default function Services() {
                   />
 
                   <FloatingLabelInput
-                    label="Message"
-                    type="test"
+                    label="Event Type"
+                    type="text"
                     required
-                    onChange={(e) => setMessage(e.target.value)}
-                    value={message}
+                    onChange={(e) => setEventType(e.target.value)}
+                    value={eventType}
                   />
                 </form>
-                <div className="w-fit h-fit p-3 px-5 m-5 bg-darkBlue hover:scale-[105%] duration-300 transition-all active:scale-100 z-20 rounded-lg  flex flex-col items-center justify-center text-cream font-montserrat cursor-pointer">
-                  Submit
+                {statusMessage.text && (
+                  <p
+                    className={`text-sm font-montserrat mb-4 ${
+                      statusMessage.isError ? "text-darkblue" : "text-grayBlue"
+                    } ${
+                      statusMessage.text === "null" ? "invisible" : "visible"
+                    }`}
+                  >
+                    {statusMessage.text}
+                  </p>
+                )}
+
+                <SubmitBtn
+                  details={details}
+                  resetFuncs={resetFuncs}
+                  setStatusMessage={setStatusMessage}
+                />
+              </div>
+              <div className="flex flex-col items-center justify-center w-full h-full   space-y-5">
+                <h1 className="font-meditative text-darkBlue text-4xl sm:text-6xl lg:text-7xl mb-5">
+                  Or Call Us
+                </h1>
+                <p className="text-darkBlue text-lg sm:text-xl lg:text-2xl font-montserrat">
+                  +91 12345 67890
+                </p>
+                <p className="text-darkBlue text-lg sm:text-xl lg:text-2xl font-montserrat">
+                  +91 98765 43210
+                </p>
+                <div className="flex flex-col items-center justify-center w-full h-full p-10 font-sallim text-5xl lg:text-8xl relative z-20">
+                  <span className="font-meditative z-10 text-darkBlue">
+                    Brahmma{" "}
+                  </span>{" "}
+                  <span className="font-sallim text-sandal text-[7rem] font-thin  -rotate-[10deg] ">
+                    {" "}
+                    Decors
+                  </span>
                 </div>
               </div>
             </div>

@@ -23,8 +23,9 @@ const EventGallery = ({ event, imgArray }: EventGalleryProps) => {
 
   return (
     <div className="flex flex-col h-auto w-screen p-4 my-2">
-      <span>
-        <h2 className="text-3xl font-bold mb-4">{event} Gallery</h2>
+      <span className="w-full flex flex-row justify-between items-center">
+        <h2 className="text-4xl md:text-5xl font-semibold text-darkBlue whitespace-nowrap mr-7 w-fit font-meditative mb-4">{event} Gallery</h2>
+        <div className="h-1 md:h-2 bg-darkBlue w-full rounded-full mb-4"/>
       </span>
 
       <div className="flex overflow-x-auto space-x-4 py-2 scrollbar-hide">
@@ -32,12 +33,11 @@ const EventGallery = ({ event, imgArray }: EventGalleryProps) => {
           {imgArray.map((img, index) => (
             <div
               key={index}
-              className="flex-shrink-0 rounded-lg overflow-hidden cursor-pointer"
+              className="flex-shrink-0 rounded-lg overflow-hidden cursor-pointer h-[250px] md:h-[450px]"
               style={{
                 width: "70vw",
-                maxWidth: "350px",
+                maxWidth: "700px",
                 minWidth: "220px",
-                height: "200px",
               }}
               onClick={() => setSelectedImage(img.src)}
             >
